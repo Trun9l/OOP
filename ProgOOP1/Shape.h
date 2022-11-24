@@ -19,6 +19,5 @@ public:
 	bool Compare(Shape* second);
 	virtual void OutBalls(ofstream& ofst) {};
 	virtual bool CheckBalls() { return false; };
-	virtual int GetR() { return -1; };
 };
 
