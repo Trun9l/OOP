@@ -1,7 +1,6 @@
 #include "Shape.h"
 #include"Ball.h"
 #include "Parallelepiped.h"
-#include "Tetrahedron.h"
 Shape* Shape::InShape(ifstream& ifst)
 {
 	Shape* sp;
@@ -13,9 +12,6 @@ Shape* Shape::InShape(ifstream& ifst)
 		break;
 	case 2:
 		sp = new Parallelepiped;
-		break;
-	case 3:
-		sp = new Tetrahedron;
 		break;
 	default:
 		return 0;
