@@ -20,6 +20,7 @@ Shape* Shape::InShape(ifstream& ifst)
 	default:
 		return 0;
 	}
+	ifst >> sp->meltingPoint;
 	ifst >> sp->density;
 	sp->InData(ifst);
 	return sp;
@@ -27,4 +28,8 @@ Shape* Shape::InShape(ifstream& ifst)
 float Shape::GetDensity()
 {
 	return density;
+}
+int Shape::GetMeltingPoint()
+{
+	return meltingPoint;
 }
