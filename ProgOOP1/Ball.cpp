@@ -8,16 +8,15 @@ void Ball::Out(ofstream& ofst)
 {
 	ofst << "It is Ball: r = " <<r;
 }
-void Ball::OutBalls(ofstream& ofst)
+void Ball::MultiMethod(Shape* other, ofstream& ofst)
 {
-	Out(ofst);
+	other->MMBall(ofst);
 }
-bool Ball::CheckBalls()
+void Ball::MMBall(ofstream& ofst)
 {
-	return true;
+	ofst << "Two balls" << endl;
 }
-float Ball::Volume()
+void Ball::MMParal(ofstream& ofst)
 {
-	float pi = 3.14;
-	return (4 / 3) * pi * this->r * this->r;
+	ofst << "First is a parallelepiped, second is a ball" << endl;
 }

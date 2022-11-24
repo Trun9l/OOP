@@ -74,52 +74,14 @@ void Container::Out(ofstream& ofst) {
 		ofst << i << ": ";
 		pointer->GetSp()->Out(ofst);
 		ofst << ", density = " << pointer->GetSp()->GetDensity();
-		ofst << ", melting point = " << pointer->GetSp()->GetMeltingPoint();
-		ofst << ", " << "volume = " << pointer->GetSp()->Volume();
 		pointer = pointer->GetNext();
 		ofst << endl;
 	}
-}
-Node* Container::NodeAt(int x)
-{
-	Node* current = head;
-	for (int i = 0; i < x; ++i)
+	ofst << "Multimethod." << endl;
+	pointer = head;
+	for (int i = 0; i < length - 1; i++)
 	{
-		current = current->GetNext();
-	}
-	return current;
-}
-void Container::Sort()
-{
-	for (int i = 0; i < this->size - 1; i++)
-	{
-		Node* nodeAtI = this->NodeAt(i);
-		for (int j = i + 1; j < this->size; j++) {
-			Node* nodeAtJ = this->NodeAt(j);
-			if (nodeAtI->GetSp()->Compare(nodeAtJ->GetSp())) {
-			//if (Compare(nodeAtI->sp, nodeAtJ->sp)) {
-				Shape* tmp = nodeAtI->GetSp();
-				nodeAtI->ChangeSp(nodeAtJ->GetSp());
-				nodeAtJ->ChangeSp(tmp);
-				//nodeAtI->GetSp() = nodeAtJ->GetSp();
-				//nodeAtJ->GetSp() = tmp;
-			}
-		}
-	}
-}
-void Container::OutBalls(ofstream& ofst) {
-	int length = this->GetLength();
-	ofst << "Only balls." << endl;
-	Node* pointer = head;
-	for (int i = 0; i < length; i++) {
-		//container* pointer = c;
-		if (pointer->GetSp()->CheckBalls())
-		{
-			ofst << i << ": ";
-			pointer->GetSp()->Out(ofst);
-			ofst << ", density = " << pointer->GetSp()->GetDensity();
-		ofst << endl;
-		}
+		pointer->GetSp()->MultiMethod(pointer->GetNext()->GetSp(), ofst);
 		pointer = pointer->GetNext();
 	}
 }

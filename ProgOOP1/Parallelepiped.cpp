@@ -7,7 +7,15 @@ void Parallelepiped::Out(ofstream& ofst)
 {
 	ofst << "It is Parallelepiped: a = " << a << ", b = " << b << ", c = " << c;
 }
-float Parallelepiped::Volume()
+void Parallelepiped::MultiMethod(Shape* other, ofstream& ofst)
 {
-	return this->a * this->b * this->c;
+	other->MMParal(ofst);
+}
+void Parallelepiped::MMBall(ofstream& ofst)
+{
+	ofst << "One ball and one parallelepiped" << endl;
+}
+void Parallelepiped::MMParal(ofstream& ofst)
+{
+	ofst << "We have two parallelepipeds" << endl;
 }

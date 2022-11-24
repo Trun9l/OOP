@@ -16,7 +16,3 @@ void Node::ChangeNext(Node* newNode)
 {
 	next = newNode;
 }
-void Node::ChangeSp(Shape* newSp)
-{
-	sp = newSp;
-}
