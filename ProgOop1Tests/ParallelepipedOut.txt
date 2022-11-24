@@ -1,0 +1,1 @@
+It is Parallelepiped: a = 11, b = 15, c = 17
