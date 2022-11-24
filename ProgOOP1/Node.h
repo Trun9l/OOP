@@ -12,5 +12,6 @@ public:
 	Node* GetNext();
 	void ChangeNext(Node* newNode);
 	Node(Shape* sp=NULL, Node* next = NULL);
+	void ChangeSp(Shape* newSp);
 };
 

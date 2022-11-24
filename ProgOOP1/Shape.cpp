@@ -29,6 +29,11 @@ float Shape::GetDensity()
 {
 	return density;
 }
+bool Shape::Compare(Shape* second)
+{
+	return this->Volume() < second->Volume();
+}
+}
 int Shape::GetMeltingPoint()
 {
 	return meltingPoint;

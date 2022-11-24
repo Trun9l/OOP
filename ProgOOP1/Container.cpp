@@ -80,3 +80,30 @@ void Container::Out(ofstream& ofst) {
 		ofst << endl;
 	}
 }
+Node* Container::NodeAt(int x)
+{
+	Node* current = head;
+	for (int i = 0; i < x; ++i)
+	{
+		current = current->GetNext();
+	}
+	return current;
+}
+void Container::Sort()
+{
+	for (int i = 0; i < this->size - 1; i++)
+	{
+		Node* nodeAtI = this->NodeAt(i);
+		for (int j = i + 1; j < this->size; j++) {
+			Node* nodeAtJ = this->NodeAt(j);
+			if (nodeAtI->GetSp()->Compare(nodeAtJ->GetSp())) {
+			//if (Compare(nodeAtI->sp, nodeAtJ->sp)) {
+				Shape* tmp = nodeAtI->GetSp();
+				nodeAtI->ChangeSp(nodeAtJ->GetSp());
+				nodeAtJ->ChangeSp(tmp);
+				//nodeAtI->GetSp() = nodeAtJ->GetSp();
+				//nodeAtJ->GetSp() = tmp;
+			}
+		}
+	}
+}
