@@ -15,6 +15,5 @@ public:
 	void In(ifstream& ifst);
 	int GetLength();
 	void Out(ofstream& ofst);
-	void OutBalls(ofstream& ofst);
 };
 

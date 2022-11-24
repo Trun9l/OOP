@@ -8,7 +8,5 @@ public:
 	~Ball() {};
 	void InData(ifstream& ifst);
 	void Out(ofstream& ofst);
-	void OutBalls(ofstream& ofst);
-	bool CheckBalls();
 };
 
