@@ -24,3 +24,7 @@ float Shape::GetDensity()
 {
 	return density;
 }
+bool Shape::Compare(Shape* second)
+{
+	return this->Volume() < second->Volume();
+}
