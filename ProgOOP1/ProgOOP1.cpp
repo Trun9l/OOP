@@ -27,7 +27,6 @@ int main(int argc, char* argv[])
 	ofst << "Empty container. " << endl;
 	c.Out(ofst);
 	cout << "Stop" << endl;
-
 	_CrtDumpMemoryLeaks();
 	return 0;
 }

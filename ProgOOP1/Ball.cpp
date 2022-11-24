@@ -6,7 +6,7 @@ void Ball::InData(ifstream& ifst)
 }
 void Ball::Out(ofstream& ofst)
 {
-	ofst << "It is Ball: r = " <<r;
+	ofst << "It is Ball: r = " << r;
 }
 void Ball::OutBalls(ofstream& ofst)
 {

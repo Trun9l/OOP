@@ -7,7 +7,8 @@ Shape* Shape::InShape(ifstream& ifst)
 	Shape* sp;
 	int k;
 	ifst >> k;
-	switch (k) {
+	switch (k) 
+	{
 	case 1:
 		sp = new Ball;
 		break;

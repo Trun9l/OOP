@@ -18,7 +18,8 @@ void Container::Clear()
 		size--;
 	}
 }
-Node* Container:: GetTail() {
+Node* Container:: GetTail()
+{
 	if (head == NULL)
 		return head;
 	else
@@ -32,7 +33,8 @@ Node* Container:: GetTail() {
 	}
 	
 }
-void Container::InsertAfter(Node* leftNode, Node* newNode) {
+void Container::InsertAfter(Node* leftNode, Node* newNode)
+{
 	/*if (leftContainer != NULL) {
 		newContainer->next = leftContainer->next;
 		leftContainer->next = newContainer;
@@ -43,17 +45,21 @@ void Container::InsertAfter(Node* leftNode, Node* newNode) {
 	else
 		leftNode = newNode;
 }
-void Container::PushBack(Node* newShape) {
+void Container::PushBack(Node* newShape)
+{
 	Node* last=this->GetTail();
 	this->InsertAfter(last, newShape);
 	++size;
 	//return InsertAfter(last, newShape);
 }
-void Container::In(ifstream& ifst) {
+void Container::In(ifstream& ifst)
+{
 	Shape* newShape = NULL;
-	while (!ifst.eof()) {
+	while (!ifst.eof())
+	{
 		newShape = newShape->InShape(ifst);
-		if (newShape != 0) {
+		if (newShape != 0)
+		{
 			Node* newNode = new Node(newShape);
 			this->PushBack(newNode);
 			if (head == NULL)
@@ -61,15 +67,18 @@ void Container::In(ifstream& ifst) {
 		}
 	}
 }
-int Container::GetLength() {
+int Container::GetLength()
+{
 	
 	return size;
 }
-void Container::Out(ofstream& ofst) {
+void Container::Out(ofstream& ofst)
+{
 	int length = this->GetLength();
 	ofst << "Container contains " << length << " elements." << endl;
 		Node* pointer = head;
-	for (int i = 0; i < length; i++) {
+	for (int i = 0; i < length; i++)
+	{
 		//container* pointer = c;
 		ofst << i << ": ";
 		pointer->GetSp()->Out(ofst);
@@ -94,9 +103,11 @@ void Container::Sort()
 	for (int i = 0; i < this->size - 1; i++)
 	{
 		Node* nodeAtI = this->NodeAt(i);
-		for (int j = i + 1; j < this->size; j++) {
+		for (int j = i + 1; j < this->size; j++)
+		{
 			Node* nodeAtJ = this->NodeAt(j);
-			if (nodeAtI->GetSp()->Compare(nodeAtJ->GetSp())) {
+			if (nodeAtI->GetSp()->Compare(nodeAtJ->GetSp()))
+			{
 			//if (Compare(nodeAtI->sp, nodeAtJ->sp)) {
 				Shape* tmp = nodeAtI->GetSp();
 				nodeAtI->ChangeSp(nodeAtJ->GetSp());
@@ -107,11 +118,13 @@ void Container::Sort()
 		}
 	}
 }
-void Container::OutBalls(ofstream& ofst) {
+void Container::OutBalls(ofstream& ofst)
+{
 	int length = this->GetLength();
 	ofst << "Only balls." << endl;
 	Node* pointer = head;
-	for (int i = 0; i < length; i++) {
+	for (int i = 0; i < length; i++)
+	{
 		//container* pointer = c;
 		if (pointer->GetSp()->CheckBalls())
 		{
@@ -120,7 +133,7 @@ void Container::OutBalls(ofstream& ofst) {
 			ofst << ", density = " << pointer->GetSp()->GetDensity();
 			ofst << ", melting point = " << pointer->GetSp()->GetMeltingPoint();
 			ofst << ", " << "volume = " << pointer->GetSp()->Volume();
-		ofst << endl;
+			ofst << endl;
 		}
 		pointer = pointer->GetNext();
 	}
