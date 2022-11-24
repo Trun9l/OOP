@@ -10,6 +10,7 @@ public:
 	~Container() { Clear(); } // утилизация контейнера
 	void Clear();
 	Node* GetTail();
+	Node* GetHead() { return head; };
 	void InsertAfter(Node* leftNode, Node* newNode);
 	void PushBack(Node* newShape);
 	void In(ifstream& ifst);
