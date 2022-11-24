@@ -19,6 +19,7 @@ int main(int argc, char* argv[])
 	c.In(ifst);
 	ofst << "Filled container. " << endl;
 	c.Out(ofst);
+	c.OutBalls(ofst);
 	ofst << "Sort container by volume. " << endl;
 	c.Sort();
 	c.Out(ofst);

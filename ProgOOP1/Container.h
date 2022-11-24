@@ -17,5 +17,6 @@ public:
 	void Out(ofstream& ofst);
 	void Sort();
 	Node* NodeAt(int x);
+	void OutBalls(ofstream& ofst);
 };
 

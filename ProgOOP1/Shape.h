@@ -17,5 +17,7 @@ public:
 	virtual void Out(ofstream& ofst) = 0; // вывод
 	virtual float Volume() = 0;
 	bool Compare(Shape* second);
+	virtual void OutBalls(ofstream& ofst) {};
+	virtual bool CheckBalls() { return false; };
 };
 

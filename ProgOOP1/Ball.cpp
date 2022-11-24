@@ -8,6 +8,15 @@ void Ball::Out(ofstream& ofst)
 {
 	ofst << "It is Ball: r = " <<r;
 }
+void Ball::OutBalls(ofstream& ofst)
+{
+	Out(ofst);
+}
+bool Ball::CheckBalls()
+{
+	return true;
+}
+}
 float Ball::Volume()
 {
 	float pi = 3.14;
