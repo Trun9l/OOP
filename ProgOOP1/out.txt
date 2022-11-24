@@ -5,8 +5,8 @@ Container contains 4 elements.
 2: It is Ball: r = 9, density = 5.6, melting point = 21, volume = 254.34
 3: It is Tetrahedron: a = 15, density = 9.9, melting point = 29, volume = 397.748
 Only balls.
-0: It is Ball: r = 3, density = 3
-2: It is Ball: r = 9, density = 5.6
+0: It is Ball: r = 3, density = 3, melting point = 15, volume = 28.26
+2: It is Ball: r = 9, density = 5.6, melting point = 21, volume = 254.34
 Sort container by volume. 
 Container contains 4 elements.
 0: It is Tetrahedron: a = 15, density = 9.9, melting point = 29, volume = 397.748
