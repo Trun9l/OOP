@@ -3,6 +3,16 @@
 void Ball::InData(ifstream& ifst)
 {
 	ifst >> r;
+	if (ifst.fail())
+	{
+		printf_s("Can't read radius\n");
+		exit(-1);
+	}
+	if (r <= 0)
+	{
+		printf_s("Negative radius\n");
+		exit(-1);
+	}
 }
 void Ball::Out(ofstream& ofst)
 {

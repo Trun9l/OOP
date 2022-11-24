@@ -3,6 +3,16 @@
 void Tetrahedron::InData(ifstream& ifst)
 {
 	ifst >> a;
+	if (ifst.fail())
+	{
+		printf_s("Can't read a side of tetrahedron\n");
+		exit(-1);
+	}
+	if (a <= 0)
+	{
+		printf_s("Negative a side of tetrahedron\n");
+		exit(-1);
+	}
 }
 void Tetrahedron::Out(ofstream& ofst)
 {
