@@ -107,7 +107,6 @@ void Container::Sort()
 		}
 	}
 }
-}
 void Container::OutBalls(ofstream& ofst) {
 	int length = this->GetLength();
 	ofst << "Only balls." << endl;
@@ -119,6 +118,8 @@ void Container::OutBalls(ofstream& ofst) {
 			ofst << i << ": ";
 			pointer->GetSp()->Out(ofst);
 			ofst << ", density = " << pointer->GetSp()->GetDensity();
+			ofst << ", melting point = " << pointer->GetSp()->GetMeltingPoint();
+			ofst << ", " << "volume = " << pointer->GetSp()->Volume();
 		ofst << endl;
 		}
 		pointer = pointer->GetNext();

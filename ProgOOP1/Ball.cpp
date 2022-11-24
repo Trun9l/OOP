@@ -16,7 +16,6 @@ bool Ball::CheckBalls()
 {
 	return true;
 }
-}
 float Ball::Volume()
 {
 	float pi = 3.14;
