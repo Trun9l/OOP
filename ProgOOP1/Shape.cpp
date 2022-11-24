@@ -33,7 +33,7 @@ bool Shape::Compare(Shape* second)
 {
 	return this->Volume() < second->Volume();
 }
-}
+
 int Shape::GetMeltingPoint()
 {
 	return meltingPoint;
