@@ -78,3 +78,19 @@ void Container::Out(ofstream& ofst) {
 		ofst << endl;
 	}
 }
+void Container::OutBalls(ofstream& ofst) {
+	int length = this->GetLength();
+	ofst << "Only balls." << endl;
+	Node* pointer = head;
+	for (int i = 0; i < length; i++) {
+		//container* pointer = c;
+		if (pointer->GetSp()->CheckBalls())
+		{
+			ofst << i << ": ";
+			pointer->GetSp()->Out(ofst);
+			ofst << ", density = " << pointer->GetSp()->GetDensity();
+		ofst << endl;
+		}
+		pointer = pointer->GetNext();
+	}
+}
