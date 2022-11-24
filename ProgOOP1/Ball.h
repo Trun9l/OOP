@@ -8,5 +8,6 @@ public:
 	~Ball() {};
 	void InData(ifstream& ifst);
 	void Out(ofstream& ofst);
+	float Volume();
 };
 
